@@ -1,0 +1,32 @@
+<?php
+/**
+ * Copyright © 2021 Zazmic. All rights reserved.
+ */
+?>
+<?php
+/* @var $block \Zazmic\AmazonMCF\Block\Adminhtml\SkuMapping\Progress;
+ */
+?>
+<div class="progress-container">
+   <div class="progress-col">
+      <span class="total-mapped"><?= $block->escapeHtml($block->getSynced());?></span>
+      <span class="total-mapped-label"><?= $block->escapeHtml(__('SKUS')) ?> <br/>
+        <?= $block->escapeHtml(__('ENABLED')) ?></span>
+   </div>
+   <div class="progress-col">
+      <span class="pending-sku"><?= $block->escapeHtml($block->getNotSynced());?></span>
+      <span class="pending-sku-label"><?= $block->escapeHtml(__('SKUS')) ?> <br/>
+        <?= $block->escapeHtml(__('DISABLED')) ?></span>
+   </div>
+   <div class="progress-col last">
+      <span class="pending-sku"><?= $block->escapeHtml($block->getNotMapped());?></span>
+      <span class="pending-sku-label"><?= $block->escapeHtml(__('NOT')) ?> <br/>
+        <?= $block->escapeHtml(__('MAPPED')) ?></span>
+   </div>
+</div>
+<br/>
+<div class="message"><?= $block->escapeHtml(
+    __('Once your Magento and Amazon SKUs are mapped, you can Enable or Disable Amazon to complete fulfillment of your product. If MCF Fulfillment Status = "Enabled", Amazon will complete fulfillment, if items are available in inventory.')
+) ?>
+</div>
+<br/>

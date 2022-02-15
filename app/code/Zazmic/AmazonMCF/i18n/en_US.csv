@@ -1,0 +1,378 @@
+Back,Back
+Save,Save
+"If you proceed, this will attempt to map Magento SKUs to ","If you proceed, this will attempt to map Magento SKUs to "
+Amazon SKUs based on exact SKU value matches.,Amazon SKUs based on exact SKU value matches.
+Any SKUs that are an exact match will be mapped.,Any SKUs that are an exact match will be mapped.
+Do you want to proceed?,Do you want to proceed?
+AutoMap,AutoMap
+Import SKUs,Import SKUs
+help,help
+AmazonMCF Help,AmazonMCF Help
+Inventory,Inventory
+Inventory Sync,Inventory Sync
+Logs,Logs
+A total of %1 record(s) have been deleted.,A total of %1 record(s) have been deleted.
+Failed to sync order,Failed to sync order
+setup,setup
+Amazon Multi-Channel Fulfillment (MCF) Setup,Amazon Multi-Channel Fulfillment (MCF) Setup
+Deleted the store successfully,Deleted the store successfully
+Something went wrong while saving the data,Something went wrong while saving the data
+Disconnected successfully,Disconnected successfully
+Something went wrong while disconnecting the store,Something went wrong while disconnecting the store
+Already a connection exist with the selected website.,Already a connection exist with the selected website.
+Saved successfully,Saved successfully
+Please select required data,Please select required data
+Settings,Settings
+Settings updated,Settings updated
+Failed to save. Please try again,Failed to save. Please try again
+Amazon Shipping Rates,Amazon Shipping Rates
+Shipping rates updated,Shipping rates updated
+SKU Mapping,SKU Mapping
+AutoMap SKU,AutoMap SKU
+Error,Error
+%1 new SKUs mapped and %2 SKUs were updated,%1 new SKUs mapped and %2 SKUs were updated
+Info,Info
+Failed to map SKUs due to invalid server response.,Failed to map SKUs due to invalid server response.
+Failed to map SKUs automatically.,Failed to map SKUs automatically.
+Failed to map SKUs automatically due to invalid server response.,Failed to map SKUs automatically due to invalid server response.
+Import,Import
+File cannot be saved to path: %1,File cannot be saved to path: %1
+Invalid file format,Invalid file format
+Import request is added to queue,Import request is added to queue
+Import SKU,Import SKU
+Please choose a valid csv file.,Please choose a valid csv file.
+Please correct the data entered.,Please correct the data entered.
+The Seller Sku is Already mapped with another Product.,The Seller Sku is Already mapped with another Product.
+Inline Edit,Inline Edit
+<b>%1</b> mapped successfully.,<b>%1</b> mapped successfully.
+<b>%1</b> unmapped successfully.,<b>%1</b> unmapped successfully.
+". "" mapped successfully.""",". "" mapped successfully."""
+No response found with given seller SKU (%1) to map.,No response found with given seller SKU (%1) to map.
+No response found with given seller SKU(%1) to map.,No response found with given seller SKU(%1) to map.
+Amazon store is not connected to the selected website.,Amazon store is not connected to the selected website.
+Mass MCF Enable,Mass MCF Enable
+"No mapped product(s) with SKU <b>""%1""</b> are found to enable.","No mapped product(s) with SKU <b>""%1""</b> are found to enable."
+"Product(s) with SKU <b>""%1""</b> not mapped yet to enable.","Product(s) with SKU <b>""%1""</b> not mapped yet to enable."
+Success,Success
+A total of %1 record(s) have been enabled.,A total of %1 record(s) have been enabled.
+"Product(s) with SKU <b>""%1""</b> not mapped yet to disable.","Product(s) with SKU <b>""%1""</b> not mapped yet to disable."
+Mass MCF Disable,Mass MCF Disable
+"No mapped product(s) with SKU <b>""%1""</b> are found to disable.","No mapped product(s) with SKU <b>""%1""</b> are found to disable."
+A total of %1 record(s) have been disabled.,A total of %1 record(s) have been disabled.
+"Connected successfully.Please click to 
+                        close the window","Connected successfully.Please click to 
+                        close the window"
+Something went wrong while connecting the store,Something went wrong while connecting the store
+There is something wrong to connect,There is something wrong to connect
+Invalid response data from the Amazon server,Invalid response data from the Amazon server
+Select a country,Select a country
+Canada,Canada
+Mexico,Mexico
+United Kingdom,United Kingdom
+Brazil,Brazil
+United States of America,United States of America
+Spain,Spain
+France,France
+Netherlands,Netherlands
+Germany,Germany
+Italy,Italy
+Sweden,Sweden
+Poland,Poland
+Egypt,Egypt
+Turkey,Turkey
+Saudi Arabia,Saudi Arabia
+United Arab Emirates,United Arab Emirates
+India,India
+Singapore,Singapore
+Australia,Australia
+Japan,Japan
+Select a version,Select a version
+Beta,Beta
+Stable,Stable
+"Please correct cron expression: ""%1"".","Please correct cron expression: ""%1""."
+Synced %1 inventory.,Synced %1 inventory.
+Failed to sync inventory due to invalid server response,Failed to sync inventory due to invalid server response
+Failed to sync inventory %1.,Failed to sync inventory %1.
+Something went wrong while saving the file(s).,Something went wrong while saving the file(s).
+File can not be saved to the destination folder.,File can not be saved to the destination folder.
+You can't create the shipment of this order.,You can't create the shipment of this order.
+"Item with id ""%1"" does not exist.","Item with id ""%1"" does not exist."
+Could not save the data: %1,Could not save the data: %1
+Sync Order,Sync Order
+Select,Select
+MCF,MCF
+NON MCF,NON MCF
+Mapped,Mapped
+Not Mapped,Not Mapped
+Enabled,Enabled
+Disabled,Disabled
+Enable,Enable
+Last Sync Time: ,Last Sync Time: 
+Sync Now,Sync Now
+Multi-Channel Fulfillment,Multi-Channel Fulfillment
+"Automate fulfillment of your store orders using Amazon's fast,
+             reliable fulfillment.","Automate fulfillment of your store orders using Amazon's fast,
+             reliable fulfillment."
+Add Amazon Account,Add Amazon Account
+How do I sign up for Multi-Channel Fulfillment?,How do I sign up for Multi-Channel Fulfillment?
+If you’re new to selling on Amazon,If you’re new to selling on Amazon
+contact,contact
+"us to sign up. If you currently sell with FBA, get started","us to sign up. If you currently sell with FBA, get started"
+here.,here.
+Do I need to be an Amazon seller to use Multi-Channel Fulfillment?,Do I need to be an Amazon seller to use Multi-Channel Fulfillment?
+"No. An Amazon Seller Central account is required to use MCF, 
+            but you are not required to sell items on Amazon. To prevent your products from being purchased on Amazon,
+             you can set the ""start selling"" date far into the future when you create the product listing. 
+             This will hide the product from the Amazon marketplace, but MCF will still accept fulfillment orders 
+             from your other channels.","No. An Amazon Seller Central account is required to use MCF, 
+            but you are not required to sell items on Amazon. To prevent your products from being purchased on Amazon,
+             you can set the ""start selling"" date far into the future when you create the product listing. 
+             This will hide the product from the Amazon marketplace, but MCF will still accept fulfillment orders 
+             from your other channels."
+What is the difference between FBA and MCF?,What is the difference between FBA and MCF?
+Fulfillment by Amazon (FBA),Fulfillment by Amazon (FBA)
+"allows you to fulfill orders placed on Amazon while Multi-Channel 
+             Fulfillment (MCF) fulfills orders on any of your channels including your own website.","allows you to fulfill orders placed on Amazon while Multi-Channel 
+             Fulfillment (MCF) fulfills orders on any of your channels including your own website."
+"Can I use my current FBA inventory to 
+                    fulfill Multi-Channel Fulfillment orders?","Can I use my current FBA inventory to 
+                    fulfill Multi-Channel Fulfillment orders?"
+"Yes. If you are an existing Amazon seller using FBA,
+             your inventory will serve both Amazon customers and customers from your MCF sales channels.","Yes. If you are an existing Amazon seller using FBA,
+             your inventory will serve both Amazon customers and customers from your MCF sales channels."
+How does MCF impact my Inventory Performance Index (IPI) score?,How does MCF impact my Inventory Performance Index (IPI) score?
+"The IPI score measures how efficient and productive you are in managing 
+            your FBA inventory.Multiple factors could influence your IPI score. However, an important one is 
+            your actions to maintain a balanced inventory level between sold and on-hand inventory and avoid excess
+               inventory (overstock). Using MCF to improve sell-through can help avoid excess inventory,
+                increasing your ability to achieve a strong IPI score.","The IPI score measures how efficient and productive you are in managing 
+            your FBA inventory.Multiple factors could influence your IPI score. However, an important one is 
+            your actions to maintain a balanced inventory level between sold and on-hand inventory and avoid excess
+               inventory (overstock). Using MCF to improve sell-through can help avoid excess inventory,
+                increasing your ability to achieve a strong IPI score."
+Is MCF offered in other countries?,Is MCF offered in other countries?
+"Yes. MCF is available in Australia, Canada, France,
+             Germany, Italy, Japan, Mexico, Spain and the United Kingdom.","Yes. MCF is available in Australia, Canada, France,
+             Germany, Italy, Japan, Mexico, Spain and the United Kingdom."
+Will Amazon share my data with other companies?,Will Amazon share my data with other companies?
+"No. Amazon collects data needed to provide distribution and
+             fulfillment services and strictly prohibits use of non-public, 
+             seller-specific data beyond enabling us to perform the services.","No. Amazon collects data needed to provide distribution and
+             fulfillment services and strictly prohibits use of non-public, 
+             seller-specific data beyond enabling us to perform the services."
+Does MCF participate in any sustainability initiatives?,Does MCF participate in any sustainability initiatives?
+"MCF, as a part of Amazon, is committed to building a
+             sustainable business for customers and the planet. In 2019, Amazon co-founded 
+             The Climate Pledge, a commitment to be net-zero carbon by 2040. To reach this goal,
+              Amazon has undertaken initiatives targeting packaging, renewable energy, and transportation.","MCF, as a part of Amazon, is committed to building a
+             sustainable business for customers and the planet. In 2019, Amazon co-founded 
+             The Climate Pledge, a commitment to be net-zero carbon by 2040. To reach this goal,
+              Amazon has undertaken initiatives targeting packaging, renewable energy, and transportation."
+Learn more about these and other initiatives.,Learn more about these and other initiatives.
+"Can I tell my customers that their orders are fulfilled by 
+                Amazon Multi-Channel Fulfillment and is there a badge I can add to my website?","Can I tell my customers that their orders are fulfilled by 
+                Amazon Multi-Channel Fulfillment and is there a badge I can add to my website?"
+"Yes, you can use the statement ""Fulfilled by Amazon"" 
+            on your website.You can also showcase","Yes, you can use the statement ""Fulfilled by Amazon"" 
+            on your website.You can also showcase"
+our logo,our logo
+" on your website to improve your customers checkout
+               experience and decrease shopping cart abandonment."," on your website to improve your customers checkout
+               experience and decrease shopping cart abandonment."
+Review these tasks to assure everything will function optimally.,Review these tasks to assure everything will function optimally.
+Amazon,Amazon
+ 1. Create an Amazon  account., 1. Create an Amazon  account.
+"If you are new to Amazon, 
+                                start by creating your account: ","If you are new to Amazon, 
+                                start by creating your account: "
+Create Amazon Seller Central Account,Create Amazon Seller Central Account
+"- this is the best choice 
+                                    if you plan to sell on Amazon.","- this is the best choice 
+                                    if you plan to sell on Amazon."
+Create an Amazon Supply Chain account,Create an Amazon Supply Chain account
+" - this is the best choice if you 
+                                    don't plan to sell on Amazon."," - this is the best choice if you 
+                                    don't plan to sell on Amazon."
+ Want more information?, Want more information?
+ Contact us, Contact us
+2. Make sure you are an approved seller on Amazon.,2. Make sure you are an approved seller on Amazon.
+"Verify with Amazon that no restrictions exist for your 
+                                products and/or categories.","Verify with Amazon that no restrictions exist for your 
+                                products and/or categories."
+More info,More info
+3. Configure Seller Central shipping method.,3. Configure Seller Central shipping method.
+"To set up shipping methods to fulfill your Amazon orders,
+                                    navigate to","To set up shipping methods to fulfill your Amazon orders,
+                                    navigate to"
+Settings > Shipping Settings,Settings > Shipping Settings
+in your Amazon Seller Central account,in your Amazon Seller Central account
+Magento,Magento
+1. Enable background tasks in Magento.,1. Enable background tasks in Magento.
+"Enable Magento cron. For maximum performance, 
+                                        set Magento cron to run once every 5 minutes.","Enable Magento cron. For maximum performance, 
+                                        set Magento cron to run once every 5 minutes."
+2. Increase number of automatic catalog matches.,2. Increase number of automatic catalog matches.
+"Attributes help match your Magento products 
+                                to Amazon listings. ","Attributes help match your Magento products 
+                                to Amazon listings. "
+Create an attribute,Create an attribute
+"for one or more of the following unique 
+                                identifiers with their respective values: ASIN, UPC, EAN ISBN, GCID","for one or more of the following unique 
+                                identifiers with their respective values: ASIN, UPC, EAN ISBN, GCID"
+"3. If your products have more than one listing condition 
+                                (e.g.: new, used, refurbished, etc.):","3. If your products have more than one listing condition 
+                                (e.g.: new, used, refurbished, etc.):"
+Create a product attribute,Create a product attribute
+that contains the product condition.,that contains the product condition.
+"4. If your Amazon store uses a different
+                                     currency than your Magento store:","4. If your Amazon store uses a different
+                                     currency than your Magento store:"
+Enable the currency,Enable the currency
+and,and
+set the currency conversion rate.,set the currency conversion rate.
+STEP 1,STEP 1
+Connect account,Connect account
+Connect your Amazon account to your Magento store.,Connect your Amazon account to your Magento store.
+Not connected,Not connected
+Successfully connected,Successfully connected
+Connect,Connect
+Are you sure to delete the store?,Are you sure to delete the store?
+Delete,Delete
+Are you sure to disconnect the store?,Are you sure to disconnect the store?
+Disconnect,Disconnect
+Proceed to SKU Mapping,Proceed to SKU Mapping
+"Connect your Amazon store to your 
+            Magento store to create a single source for your catalog.","Connect your Amazon store to your 
+            Magento store to create a single source for your catalog."
+Amazon Store Country,Amazon Store Country
+Magento Website,Magento Website
+Add,Add
+SKU,SKU
+Fullfilled by Amazon,Fullfilled by Amazon
+Error: Some SKUs were not imported. Please view error log,Error: Some SKUs were not imported. Please view error log
+here,here
+Follow the 3 steps below to map SKUs:,Follow the 3 steps below to map SKUs:
+Download sample .csv ,Download sample .csv 
+Populate sample .csv file with your Magento product SKUs ,Populate sample .csv file with your Magento product SKUs 
+"NOTE: Item-name, seller-sku are mandatory fields","NOTE: Item-name, seller-sku are mandatory fields"
+Click UPLOAD button below to import ,Click UPLOAD button below to import 
+* Only .csv file types are supported,* Only .csv file types are supported
+STEP 3,STEP 3
+Shipping Rate,Shipping Rate
+"Enabling Shipping Rate Override will 
+                override the shipping rates for the listed Amazon ship speeds based on your settings below.","Enabling Shipping Rate Override will 
+                override the shipping rates for the listed Amazon ship speeds based on your settings below."
+Shipping rate override,Shipping rate override
+"Enabling Shipping Rate Override will override the 
+                                                        shipping rates for the listed Amazon ship speeds 
+                                                        based on your settings below.","Enabling Shipping Rate Override will override the 
+                                                        shipping rates for the listed Amazon ship speeds 
+                                                        based on your settings below."
+Shipping rate,Shipping rate
+"Adjusting shipping rates will only override Amazon 
+                                                        shipping fees for your customer's orders and will 
+                                                        not change your fulfillment fees.","Adjusting shipping rates will only override Amazon 
+                                                        shipping fees for your customer's orders and will 
+                                                        not change your fulfillment fees."
+On orders over,On orders over
+Shipping rate applies to the order amount above this.,Shipping rate applies to the order amount above this.
+Description,Description
+Order Status Sync,Order Status Sync
+Auto sync,Auto sync
+Order status sync,Order status sync
+Inventory sync,Inventory sync
+Fulfillment Settings,Fulfillment Settings
+Make Amazon exclusive shipper,Make Amazon exclusive shipper
+"
+                                                    When YES is selected - and amazon can complete shipping for ALL items in the cart - 
+                                                    Amazon will be the exclusive shipping option. When NO is selected, customer may select either 
+                                                    Magento default shipping methods, or Amazon MCF options","
+                                                    When YES is selected - and amazon can complete shipping for ALL items in the cart - 
+                                                    Amazon will be the exclusive shipping option. When NO is selected, customer may select either 
+                                                    Magento default shipping methods, or Amazon MCF options"
+Enable backup ship option for partial MCF orders,Enable backup ship option for partial MCF orders
+"When Amazon cannot complete shipping for all items in the cart (ie, Product SKUs are not mapped) items will be fulfilled by Active Magento methods selected below.","When Amazon cannot complete shipping for all items in the cart (ie, Product SKUs are not mapped) items will be fulfilled by Active Magento methods selected below."
+Active Shipping,Active Shipping
+Default shipping speed for partial MCF orders,Default shipping speed for partial MCF orders
+Merchant agrees to fulfill partial MCF orders with the selected shipping speed for the %1,Merchant agrees to fulfill partial MCF orders with the selected shipping speed for the %1
+SKUS,SKUS
+ENABLED,ENABLED
+DISABLED,DISABLED
+NOT,NOT
+MAPPED,MAPPED
+"Once your Magento and Amazon SKUs are mapped, you can Enable or Disable Amazon to complete fulfillment of your product. If MCF Fulfillment Status = ""Enabled"", Amazon will complete fulfillment, if items are available in inventory.","Once your Magento and Amazon SKUs are mapped, you can Enable or Disable Amazon to complete fulfillment of your product. If MCF Fulfillment Status = ""Enabled"", Amazon will complete fulfillment, if items are available in inventory."
+1. Connect account,1. Connect account
+Account,Account
+2. SKU mapping,2. SKU mapping
+Map your Magento SKUs to your Amazon SKUs.,Map your Magento SKUs to your Amazon SKUs.
+Map your Magento SKUs to your Amazon SKUs,Map your Magento SKUs to your Amazon SKUs
+SKU mapping,SKU mapping
+3. Shipping rates,3. Shipping rates
+"Edit shipping rules based on ship speed.
+                            When a customer makes a purchase at checkout, the customer will pay the MCF rate for the MCF items if no rules are enabled.","Edit shipping rules based on ship speed.
+                            When a customer makes a purchase at checkout, the customer will pay the MCF rate for the MCF items if no rules are enabled."
+Shipping rates,Shipping rates
+4. Settings,4. Settings
+"Manage your Amazon MCF inventory sync, 
+                                        order status sync and backup shipping settings here.","Manage your Amazon MCF inventory sync, 
+                                        order status sync and backup shipping settings here."
+Map all Magento SKUs that you would like Amazon MCF to fulfill.,Map all Magento SKUs that you would like Amazon MCF to fulfill.
+Need help?,Need help?
+Connecting..!!,Connecting..!!
+Please wait to connect,Please wait to connect
+"Connected your Amazon account to your Magento store. 
+            Please go back to the set up section and refresh the page","Connected your Amazon account to your Magento store. 
+            Please go back to the set up section and refresh the page"
+Order tracking Alona,Order tracking Alona
+Tracking Number:,Tracking Number:
+Carrier:,Carrier:
+Error:,Error:
+Tracking information is currently not available. Please ,Tracking information is currently not available. Please 
+contact us,contact us
+ for more information or , for more information or 
+email us at ,email us at 
+Info:,Info:
+Track:,Track:
+%1:,%1:
+N/A,N/A
+Carrier Code,Carrier Code
+carrierCode,carrierCode
+Tracking Number,Tracking Number
+trackingNumber,trackingNumber
+Package Number,Package Number
+packageNumber,packageNumber
+Tracking Url,Tracking Url
+carrierURL,carrierURL
+Track,Track
+Shipment #,Shipment #
+There is no tracking available for this shipment.,There is no tracking available for this shipment.
+There is no tracking available.,There is no tracking available.
+Close Window,Close Window
+New Amazon Store,New Amazon Store
+Close,Close
+Field ,Field 
+ is required., is required.
+Amazon MCF,Amazon MCF
+Setup,Setup
+Help,Help
+Amazon Shipping,Amazon Shipping
+Title,Title
+Magento SKU,Magento SKU
+Amazon SKU,Amazon SKU
+Country,Country
+Amazon Product Name,Amazon Product Name
+Check for more SKUs,Check for more SKUs
+"If you proceed, then the selected items will be eligible for Amazon fulfillment. Are you sure you want to enable MCF fulfillment status for selected items?","If you proceed, then the selected items will be eligible for Amazon fulfillment. Are you sure you want to enable MCF fulfillment status for selected items?"
+Disable,Disable
+"If you proceed, then the selected items will not be eligible for the Amazon Fulfillment. Are you sure you want to disable MCF fulfillment status for selected items?","If you proceed, then the selected items will not be eligible for the Amazon Fulfillment. Are you sure you want to disable MCF fulfillment status for selected items?"
+Mapping Status,Mapping Status
+MCF Fulfillment Status,MCF Fulfillment Status
+SKU Mapping ,SKU Mapping 
+ , 
+"If you proceed, then the selected items will be deleted. Are you sure you want to delete for selected items?","If you proceed, then the selected items will be deleted. Are you sure you want to delete for selected items?"
+Area,Area
+Type,Type
+Details,Details
+User,User
+Time,Time
+Fulfillment Provider,Fulfillment Provider

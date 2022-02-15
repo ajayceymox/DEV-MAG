@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2021 Zazmic. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <carriers>
+            <amazonshipping>
+                <active>1</active>
+                <title>Amazon Multi-Channel Fulfillment</title>
+                <model>Zazmic\AmazonMCF\Model\Carrier\Amazonshipping</model>
+            </amazonshipping>
+        </carriers>
+        <mcforder>
+            <general>
+                <enable>1</enable>
+                <amcf_order_status_cron>0 * * * *</amcf_order_status_cron>
+            </general>
+        </mcforder>
+    </default>
+</config>

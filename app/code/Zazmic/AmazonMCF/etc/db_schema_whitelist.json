@@ -1,0 +1,105 @@
+{
+    "mcf_sku_mapping": {
+        "column": {
+            "id": true,
+            "product_id": true,
+            "sku": true,
+            "asin": true,
+            "seller_sku": true,
+            "amazon_product_name": true,
+            "website": true,
+            "status": true,
+            "sync_status": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "index": {
+            "MCF_SKU_MAPPING_ID": true,
+            "MCF_SKU_MAPPING_PRODUCT_ID": true,
+            "MCF_SKU_MAPPING_SKU": true,
+            "MCF_SKU_MAPPING_ASIN": true,
+            "MCF_SKU_MAPPING_SELLER_SKU": true,
+            "MCF_SKU_MAPPING_AMAZON_PRODUCT_NAME": true,
+            "MCF_SKU_MAPPING_WEBSITE": true,
+            "MCF_SKU_MAPPING_SKU_ASIN_SELLER_SKU_AMAZON_PRODUCT_NAME": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "mcf_log": {
+        "column": {
+            "id": true,
+            "area": true,
+            "type": true,
+            "details": true,
+            "user": true,
+            "time": true
+        },
+        "index": {
+            "MCF_LOG_ID": true,
+            "MCF_LOG_AREA": true,
+            "MCF_LOG_TYPE": true,
+            "MCF_LOG_DETAILS": true,
+            "MCF_LOG_USER": true,
+            "MCF_LOG_AREA_TYPE": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "mcf_sync_info": {
+        "column": {
+            "sync_id": true,
+            "sync_time": true,
+            "sync_action": true,
+            "sync_items_count": true
+        },
+        "index": {
+            "MCF_SYNC_INFO_SYNC_ID": true,
+            "MCF_SYNC_INFO_SYNC_TIME": true,
+            "MCF_SYNC_INFO_SYNC_ACTION": true,
+            "MCF_SYNC_INFO_SYNC_ITEMS_COUNT": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "mcf_inventory_sync_info": {
+        "column": {
+            "id": true,
+            "sku": true,
+            "product_id": true,
+            "prev_qty": true,
+            "updated_qty": true,
+            "last_sync_time": true
+        },
+        "index": {
+            "MCF_INVENTORY_SYNC_INFO_ID": true,
+            "MCF_INVENTORY_SYNC_INFO_SKU": true,
+            "MCF_INVENTORY_SYNC_INFO_PRODUCT_ID": true,
+            "MCF_INVENTORY_SYNC_INFO_PREV_QTY": true,
+            "MCF_INVENTORY_SYNC_INFO_UPDATED_QTY": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "sales_order": {
+        "column": {
+            "fulfilled_by_amazon": true,
+            "amazon_order_status": true,
+            "amazon_shipment_status": true
+        }
+    },
+    "sales_order_item": {
+        "column": {
+            "amazon_order_status": true,
+            "amazon_shipment_status": true,
+            "amazon_package_number": true,
+            "seller_fulfillment_order_id": true,
+            "seller_fulfillment_order_item_id": true,
+            "fulfilled_by_amazon": true
+        }
+    }
+}

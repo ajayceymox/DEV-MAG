@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2021 Zazmic. All rights reserved.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="main.top">
+            <referenceBlock class="Zazmic\AmazonMCF\Block\Adminhtml\Title" name="page.title" template="Zazmic_AmazonMCF::title.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="header">
+            <block class="Zazmic\AmazonMCF\Block\Adminhtml\Index" name="amazonmcf-tabs" after="-" template="Zazmic_AmazonMCF::tab-block.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

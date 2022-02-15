@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2021 Zazmic. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Ajay\TestGQ\Api\Data\StoreInterface" type="Ajay\TestGQ\Model\Store"/>
+    <preference for="Ajay\TestGQ\Api\StoreRepositoryInterface" type="\Ajay\TestGQ\Model\StoreRepository"/>
+
+    <preference for="Ajay\TestGQ\Api\Data\StoreInterface" type="Ajay\TestGQ\Model\Store"/>
+    <preference for="Ajay\TestGQ\Api\StoreRepositoryInterface" type="\Ajay\TestGQ\Model\StoreRepository"/>
+    <type name="Magento\Framework\GraphQl\Query\Resolver\Argument\FieldEntityAttributesPool">
+        <arguments>
+            <argument name="attributesInstances" xsi:type="array">
+                <item name="pickup_stores" xsi:type="object">
+                    \Ajay\TestGQ\Model\Resolver\FilterArgument
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>

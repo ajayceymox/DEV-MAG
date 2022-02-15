@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2021 Zazmic. All rights reserved.
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">import_form.import_form_data_source</item>
+            <item name="deps" xsi:type="string">import_form.import_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">SKU Mapping </item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">import_form</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save" class="Zazmic\AmazonMCF\Block\Adminhtml\SkuMapping\ImportButton"/>
+            <button name="back" class="Zazmic\AmazonMCF\Block\Adminhtml\SkuMapping\BackButton"/>
+        </buttons>
+    </settings>
+    <dataSource name="import_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Zazmic\AmazonMCF\Model\SkuImport\DataProvider</argument>
+            <argument name="name" xsi:type="string">import_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    <fieldset name="import_details">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="collapsible" xsi:type="boolean">false</item>
+                <item name="label" xsi:type="string" translate="true">SKU Mapping</item>
+                <item name="sortOrder" xsi:type="number">20</item>
+            </item>
+        </argument>
+        <settings>
+            <label translate="true">Import</label>
+            <collapsible>true</collapsible>
+            <opened>true</opened>
+        </settings>
+        <htmlContent name="html_content">
+            <argument name="block" xsi:type="object">Zazmic\AmazonMCF\Block\Adminhtml\Import\Sample</argument>
+        </htmlContent>
+        <field name="importdata" formElement="fileUploader">
+            <settings>
+                <label translate="true">&#160;</label>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>            
+            <formElements>
+                <fileUploader>
+                    <settings>
+                        <required>true</required>
+                        <allowedExtensions>csv</allowedExtensions>
+                        <isMultipleFiles>false</isMultipleFiles>
+                        <uploaderConfig>
+                            <param xsi:type="string" name="url">amazonmcf/SkuMapping/Upload</param>
+                        </uploaderConfig>
+                    </settings>
+                </fileUploader>
+            </formElements>
+        </field>
+    </fieldset>
+</form>

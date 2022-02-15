@@ -1,0 +1,4 @@
+<?php /** * Copyright © 2021 Zazmic. All rights reserved. */ /* @var $block \Zazmic\AmazonMCF\Block\Adminhtml\Inventory\SyncButton */ $website = $block->getWebsite(); $lastSyced=$block->getLastSynced($website); ?> <div class="actions-toolbar form-btn"><?php if ($lastSyced):?> <span><?= $block->escapeHtml(__('Last Sync Time: '))?> <?= $block->escapeHtml($lastSyced)?></span> <?php endif;?> <div class="primary"><button type="button" id="inventory-sync-<?= $block->escapeHtml($website)?>" class="inventory-sync action-primary" title="<?= $block->escapeHtml(__('Sync Now')) ?>" ><span><?= $block->escapeHtml(__('Sync Now')) ?></span></button></div></div><script>
+    document.getElementById("inventory-sync-<?= $block->escapeHtml($website)?>").onclick = function () {
+        location.href = "<?= $block->escapeHtml($block->getUrl("amazonmcf/inventory/inventorysync", ['website' => $website]))?>";
+    };</script>

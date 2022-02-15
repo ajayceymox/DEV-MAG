@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2021 Zazmic. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Zazmic_AmazonMCF::amazonmcf" title="Amazon MCF" translate="title" module="Zazmic_AmazonMCF" sortOrder="20" dependsOnModule="Zazmic_AmazonMCF" resource="Zazmic_AmazonMCF::amazonmcf"/>
+        <add id="Zazmic_AmazonMCF::setup" title="Setup" translate="title" module="Zazmic_AmazonMCF" sortOrder="10" parent="Zazmic_AmazonMCF::amazonmcf" action="amazonmcf/setup/" resource="Zazmic_AmazonMCF::setup"/>
+        <add id="Zazmic_AmazonMCF::sku_mapping" title="SKU mapping" translate="title" module="Zazmic_AmazonMCF" sortOrder="15" parent="Zazmic_AmazonMCF::amazonmcf" action="amazonmcf/skumapping/" resource="Zazmic_AmazonMCF::sku_mapping"/>
+        <add id="Zazmic_AmazonMCF::shipping_rate" title="Shipping rates" translate="title" module="Zazmic_AmazonMCF" sortOrder="25" parent="Zazmic_AmazonMCF::amazonmcf" action="amazonmcf/shippingrate/" resource="Zazmic_AmazonMCF::shipping_rate"/>
+        <add id="Zazmic_AmazonMCF::shipmentstatus" title="Settings" translate="title" module="Zazmic_AmazonMCF" sortOrder="25" parent="Zazmic_AmazonMCF::amazonmcf" action="amazonmcf/shipmentstatus/" resource="Zazmic_AmazonMCF::shipment_status"/>
+        <add id="Zazmic_AmazonMCF::help" title="Help" translate="title" module="Zazmic_AmazonMCF" sortOrder="30" parent="Zazmic_AmazonMCF::amazonmcf" action="amazonmcf/help/" resource="Zazmic_AmazonMCF::help"/>
+        <add id="Zazmic_AmazonMCF::log" title="Logs" translate="title" module="Zazmic_AmazonMCF" sortOrder="30" parent="Zazmic_AmazonMCF::amazonmcf" action="amazonmcf/log/" resource="Zazmic_AmazonMCF::log"/>
+    </menu>
+</config>

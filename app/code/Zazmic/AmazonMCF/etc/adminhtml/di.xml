@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2021 Zazmic. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\Reporting">
+        <plugin name="sales_grid_collection" type="\Zazmic\AmazonMCF\Plugin\Sales\Order\Grid"/>
+    </type>
+    <type name="\Magento\Sales\Block\Adminhtml\Order\View">
+        <plugin name="Zazmic_AmazonMCF::sendOrderView" type="Zazmic\AmazonMCF\Plugin\SalesOrderButton" />
+    </type>
+    <type name="Magento\Framework\View\Element\Message\MessageConfigurationsPool">
+    <arguments>
+        <argument name="configurationsMap" xsi:type="array">
+            <item name="import-skumap" xsi:type="array">
+                <item name="renderer" xsi:type="const">\Magento\Framework\View\Element\Message\Renderer\BlockRenderer::CODE</item>
+                <item name="data" xsi:type="array">
+                    <item name="template" xsi:type="string">Zazmic_AmazonMCF::messages/import-skumap.phtml</item>
+                </item>
+            </item>
+        </argument>
+    </arguments>
+</type>
+
+</config>

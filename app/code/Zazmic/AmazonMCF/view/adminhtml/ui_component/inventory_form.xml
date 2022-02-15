@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2021 Zazmic. All rights reserved.
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">inventory_form.inventory_form_data_source</item>
+            <item name="deps" xsi:type="string">inventory_form.inventory_form_data_source</item>
+        </item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">inventory_form</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save" class="Zazmic\AmazonMCF\Block\Adminhtml\Inventory\SaveButton"/>
+            <button name="back" class="Zazmic\AmazonMCF\Block\Adminhtml\Inventory\BackButton"/>
+        </buttons>
+    </settings>
+    <dataSource name="inventory_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Zazmic\AmazonMCF\Model\Inventory\DataProvider</argument>
+            <argument name="name" xsi:type="string">inventory_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">scope_id</argument>
+            <argument name="requestFieldName" xsi:type="string">scope_id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="submit_url" xsi:type="url" path="amazonmcf/inventory/save"/>
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+     </dataSource>
+      <container name="custom_tab_container">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="sortOrder" xsi:type="string">1</item>
+            </item>
+        </argument>
+        <htmlContent name="html_content">
+            <argument name="block" xsi:type="object">Zazmic\AmazonMCF\Block\Adminhtml\Inventory\Tabs</argument>
+        </htmlContent>
+    </container>
+</form>

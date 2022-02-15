@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2021 Zazmic. All rights reserved.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="mcf_sku_mapping" resource="default" engine="innodb" comment="MCF SKU ASIN Mapping table">
+        <column xsi:type="int" name="id" unsigned="true" nullable="false" padding="10" identity="true" comment="Mapping Id"/>
+        <column xsi:type="int" name="product_id" nullable="false" comment="product id of the store"/>
+        <column xsi:type="varchar" name="sku" nullable="true" length="250" comment="product sku of store"/>
+        <column xsi:type="varchar" name="asin" nullable="true" length="255" comment="ASIN from AMCF"/>
+        <column xsi:type="varchar" name="seller_sku" nullable="true" length="255" comment="Seller SKU from AMCF"/>
+        <column xsi:type="varchar" name="amazon_product_name" nullable="true" length="255" comment="Product name from AMCF"/>
+        <column xsi:type="varchar" name="website" nullable="true" length="255" comment="Website"/>
+        <column xsi:type="varchar" name="status" nullable="false" length="255" comment="Status"/>
+        <column xsi:type="int" name="sync_status" nullable="false" comment="Enable Disable Sync"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <index referenceId="MCF_SKU_MAPPING_ID" indexType="btree">
+            <column name="id"/>
+        </index>
+        <index referenceId="MCF_SKU_MAPPING_PRODUCT_ID" indexType="btree">
+            <column name="product_id"/>
+        </index>
+        <index referenceId="MCF_SKU_MAPPING_SKU" indexType="btree">
+            <column name="sku"/>
+        </index>
+        <index referenceId="MCF_SKU_MAPPING_ASIN" indexType="btree">
+            <column name="asin"/>
+        </index>
+        <index referenceId="MCF_SKU_MAPPING_SELLER_SKU" indexType="btree">
+            <column name="seller_sku"/>
+        </index>
+        <index referenceId="MCF_SKU_MAPPING_AMAZON_PRODUCT_NAME" indexType="btree">
+            <column name="amazon_product_name"/>
+        </index>
+        <index referenceId="MCF_SKU_MAPPING_WEBSITE" indexType="btree">
+            <column name="website"/>
+        </index>
+        <index referenceId="MCF_FTI" indexType="fulltext">
+            <column name="sku"/>
+            <column name="asin"/>
+            <column name="seller_sku"/>
+            <column name="amazon_product_name"/>
+        </index>
+    </table>
+
+    <table name="mcf_log" resource="default" engine="innodb" comment="MCF Log Table">
+        <column xsi:type="int" name="id" identity="true" unsigned="true" nullable="false" comment="Log Id"/>
+        <column xsi:type="varchar" name="area" nullable="false" length="255" comment="Log Section"/>
+        <column xsi:type="varchar" name="type" nullable="true" length="255" comment="Log Type"/>
+        <column xsi:type="varchar" name="details" nullable="true" length="1024" comment="Log Details"/>
+        <column xsi:type="varchar" name="user" nullable="true" length="255" comment="Updated By - user"/>
+        <column xsi:type="timestamp" name="time" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Created At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <index referenceId="MCF_LOG_ID" indexType="btree">
+            <column name="id"/>
+        </index>
+        <index referenceId="MCF_LOG_AREA" indexType="btree">
+            <column name="area"/>
+        </index>
+        <index referenceId="MCF_LOG_TYPE" indexType="btree">
+            <column name="type"/>
+        </index>
+        <index referenceId="MCF_LOG_DETAILS" indexType="btree">
+            <column name="details"/>
+        </index>
+        <index referenceId="MCF_LOG_TIME" indexType="btree">
+            <column name="user"/>
+        </index>
+        <index referenceId="MCF_LOG_FTI" indexType="fulltext">
+            <column name="area"/>
+            <column name="type"/>
+        </index>
+    </table>
+
+    <table name="mcf_sync_info" resource="default" engine="innodb" comment="MCF Sync Info Table">
+        <column xsi:type="int" name="sync_id" identity="true" unsigned="true" nullable="false" comment="Sync Id"/>
+        <column xsi:type="timestamp" name="sync_time" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Sync Time"/>
+        <column xsi:type="varchar" name="sync_action" nullable="true"  comment="Sync Type inventory or mapping"/>
+        <column xsi:type="int" name="sync_items_count" nullable="true"  comment="Sync items count"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="sync_id"/>
+        </constraint>
+        <index referenceId="MCF_SYNC_ID" indexType="btree">
+            <column name="sync_id"/>
+        </index>
+        <index referenceId="MCF_SYNC_TIME" indexType="btree">
+            <column name="sync_time"/>
+        </index>
+        <index referenceId="MCF_SYNC_ACTION" indexType="btree">
+            <column name="sync_action"/>
+        </index>
+        <index referenceId="MCF_SYNC_ITEMS_COUNT" indexType="btree">
+            <column name="sync_items_count"/>
+        </index>
+    </table>
+
+     <table name="mcf_inventory_sync_info" resource="default" engine="innodb" comment="MCF Inventory Sync Info Details Table">
+        <column xsi:type="int" name="id" identity="true" unsigned="true" nullable="false" comment="Id"/>
+        <column xsi:type="varchar" name="sku" nullable="false" length="255" comment="SKU"/>
+        <column xsi:type="int" name="product_id" nullable="true"  comment="Product Id"/>
+        <column xsi:type="int" name="prev_qty" nullable="true"  comment="Prev Qty"/>
+        <column xsi:type="int" name="updated_qty" nullable="true"  comment="Updated Qty"/>
+        <column xsi:type="timestamp" name="last_sync_time" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Last Sync Time"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <index referenceId="MCF_INVENTORY_SYNC_INFO_ID" indexType="btree">
+            <column name="id"/>
+        </index>
+        <index referenceId="MCF_INVENTORY_SYNC_INFO_SKU" indexType="btree">
+            <column name="sku"/>
+        </index>
+        <index referenceId="MCF_INVENTORY_SYNC_INFO_PRODUCT_ID" indexType="btree">
+            <column name="product_id"/>
+        </index>
+        <index referenceId="MCF_INVENTORY_SYNC_INFO_PREV_QTY" indexType="btree">
+            <column name="prev_qty"/>
+        </index>
+        <index referenceId="MCF_INVENTORY_SYNC_INFO_UPDATED_QTY" indexType="btree">
+            <column name="updated_qty"/>
+        </index>
+        <index referenceId="MCF_INVENTORY_SYNC_INFO_FTI" indexType="fulltext">
+            <column name="sku"/>
+        </index>
+    </table>
+     
+    <table name="sales_order" resource="sales" engine="innodb" comment="Sales Order">
+        <column xsi:type="int" name="fulfilled_by_amazon" nullable="true" comment="Amazon mcf order check"/>
+        <column xsi:type="varchar" name="amazon_order_status" nullable="true" length="32" comment="Amazon mcf order status"/>
+        <column xsi:type="varchar" name="amazon_shipment_status" nullable="true" length="32" comment="Amazon fulfillment shipping status"/>
+    </table>
+    <table name="sales_order_item" resource="sales" engine="innodb" comment="Sales Order Item">
+        <column xsi:type="varchar" name="amazon_order_status" nullable="true" length="32" comment="Amazon mcf order status"/>
+        <column xsi:type="varchar" name="amazon_shipment_status" nullable="true" length="32" comment="Amazon fulfillment shipping status"/>
+        <column xsi:type="varchar" name="amazon_package_number" nullable="true" length="32" comment="Amazon fulfillment package number"/>
+        <column xsi:type="varchar" name="seller_fulfillment_order_id" nullable="true" length="32" comment="Amazon fulfillment order id"/>
+        <column xsi:type="varchar" name="seller_fulfillment_order_item_id" nullable="true" length="32" comment="Amazon fulfillment order Item id"/>
+        <column xsi:type="int" name="fulfilled_by_amazon" nullable="true" comment="Amazon mcf order check"/>
+    </table>
+   <!--  <table name="mcf_inventory_config" resource="default" engine="innodb" comment="MCF Inventory Sync Info Details Table">
+        <column xsi:type="int" name="id" identity="true" unsigned="true" nullable="false" comment="Id"/>
+        <column xsi:type="int" name="auto_inventory" nullable="true"  comment="Auto Inventory Status"/>
+        <column xsi:type="varchar" name="sync_interval" nullable="true" length="255" comment="Sync Interval"/>
+        <column xsi:type="varchar" name="country" nullable="true"  comment="Country of the store"/>
+        <column xsi:type="timestamp" name="last_synced" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Last Sync Time"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <index referenceId="MCF_INVENTORY_CONFIG_ID" indexType="btree">
+            <column name="id"/>
+        </index>
+        <index referenceId="MCF_INVENTORY_CONFIG_AUTO_INVENTORY" indexType="btree">
+            <column name="auto_inventory"/>
+        </index>
+        <index referenceId="MCF_INVENTORY_CONFIG_SYNC_INTERVAL" indexType="btree">
+            <column name="sync_interval"/>
+        </index>
+        <index referenceId="MCF_INVENTORY_CONFIG_COUNTRY" indexType="btree">
+            <column name="country"/>
+        </index>
+        <index referenceId="MCF_INVENTORY_CONFIG_LAST_SYNCED" indexType="btree">
+            <column name="last_synced"/>
+        </index>
+    </table> -->
+
+</schema>

@@ -1,0 +1,283 @@
+<?php
+/**
+ * Copyright © 2021 Zazmic. All rights reserved.
+ */
+/* @var $block \Zazmic\AmazonMCF\Block\Adminhtml\Index */
+?>
+<div class="page-connect">
+    <?php if (empty($block->getActiveConnections())): ?>
+        <h3 class="page-sub-title">
+            <?= $block->escapeHtml(__('Review these tasks to assure everything will function optimally.')) ?>
+        </h3>
+        <div class="page-description row b4">
+            <div class="col-6 col-left">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="cart-title"><?= $block->escapeHtml(__('Amazon')) ?></h4>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>
+                                <h4><?= $block->escapeHtml(__(' 1. Create an Amazon  account.')) ?></h4>
+                                <p><?= $block->escapeHtml(__('If you are new to Amazon, 
+                                start by creating your account: ')) ?>
+                                <br/>
+                                <a href="https://sellercentral.amazon.com/" target="_blank">
+                                        <?= $block->escapeHtml(__('Create Amazon Seller Central Account')) ?>
+                                    </a><?= $block->escapeHtml(__('- this is the best choice 
+                                    if you plan to sell on Amazon.')) ?>
+                                <br/><a href="https://supplychain.amazon.com/sign-up" target="_blank">
+                                        <?= $block->escapeHtml(__('Create an Amazon Supply Chain account')) ?>
+                                    </a> 
+                                    <?= $block->escapeHtml(__(" - this is the best choice if you 
+                                    don't plan to sell on Amazon.")) ?>
+                                <br/>
+                                    <?= $block->escapeHtml(__(' Want more information?')) ?>
+                                    <a href="https://supplychain.amazon.com/contact-us" target="_blank">
+                                        <?= $block->escapeHtml(__(' Contact us')) ?>
+                                    </a>
+                                </p>
+                            </li>
+                            <li>
+                                <h4>
+                                    <?= $block->escapeHtml(__('2. Make sure you are an approved seller on Amazon.')) ?>
+                                </h4>
+                                <p><?= $block->escapeHtml(__('Verify with Amazon that no restrictions exist for your 
+                                products and/or categories.'))?> <a href=
+                                "https://sellercentral.amazon.com/gp/help/help.html?itemID=G200333160&language=en_US"
+                                 target="_blank">  <?= $block->escapeHtml(__('More info')) ?></a></p>
+                            </li>
+                            <li>
+                                <h4><?= $block->escapeHtml(__('3. Configure Seller Central shipping method.')) ?></h4>
+                                <p>
+                                    <?= $block->escapeHtml(__('To set up shipping methods to fulfill your Amazon orders,
+                                    navigate to'))?> <a href="https://sellercentral.amazon.com/gp/help/G891"
+                                    target="_blank">  <?= $block->escapeHtml(__('Settings > Shipping Settings')) ?></a>
+                                    <?= $block->escapeHtml(__('in your Amazon Seller Central account')) ?>
+                                  </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-right">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="cart-title"> <?= $block->escapeHtml(__('Magento')) ?></h4>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>
+                                <h4><?= $block->escapeHtml(__('1. Enable background tasks in Magento.')) ?></h4>
+                                <p>
+                                    <?= $block->escapeHtml(__('Enable Magento cron. For maximum performance, 
+                                        set Magento cron to run once every 5 minutes.')) ?>
+                                        <a href="https://docs.magento.com/m2/ee/user_guide/system/cron.html"
+                                        target="_blank"> <?= $block->escapeHtml(__('More info')) ?></a>
+                                 </p>
+                            </li>
+                            <li>
+                                <h4>
+                                    <?= $block->escapeHtml(__('2. Increase number of automatic catalog matches.')) ?>
+                                </h4>
+                                <p>
+                                <?= $block->escapeHtml(__('Attributes help match your Magento products 
+                                to Amazon listings. ')) ?>
+                                <a href=
+                                "https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/creating-attributes.html"
+                                target="_blank"> <?= $block->escapeHtml(__('Create an attribute')) ?></a>  
+                                <?= $block->escapeHtml(__('for one or more of the following unique 
+                                identifiers with their respective values: ASIN, UPC, EAN ISBN, GCID'))?>
+                                </p>
+                            </li>
+                            <li>
+                                <h4><?= $block->escapeHtml(__('3. If your products have more than one listing condition 
+                                (e.g.: new, used, refurbished, etc.):')) ?></h4>
+                                <p>
+                                 <a href=
+                                "https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/creating-attributes.html" 
+                                target="_blank"> <?= $block->escapeHtml(__('Create a product attribute')) ?></a> 
+                                 <?= $block->escapeHtml(__('that contains the product condition.')) ?>
+                                </p>
+                            </li>
+                            <li>
+                                <h4>
+                                    <?= $block->escapeHtml(__('4. If your Amazon store uses a different
+                                     currency than your Magento store:')) ?>
+                                </h4>
+                                <p>
+                                <a href=
+                                "https://docs.magento.com/m2/ce/user_guide/configuration/general/currency-setup.html" 
+                                    target="_blank"><?= $block->escapeHtml(__('Enable the currency')) ?></a>
+                                     <?= $block->escapeHtml(__('and')) ?>
+                                    <a href="https://docs.magento.com/m2/ce/user_guide/stores/currency-update.html" 
+                                    target="_blank"><?= $block->escapeHtml(__('set the currency conversion rate.')) ?>
+                                    </a>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php else: ?>
+        <div class="g"></div>
+        <div class="connection-wrap">
+            <div class="connect-block">
+                <div class="row b4">
+                    <div class="col-6 col-left">
+                        <div class="img-box">
+                            <img src='<?= $block->escapeHtml($block->getViewFileUrl('Zazmic_AmazonMCF::images/connection-img.svg')); ?>'>
+                        </div>
+                    </div>
+                    <div class="col-6 col-right">
+                        <div class="content">
+                            <span class="label"><?= $block->escapeHtml(__('STEP 1')) ?></span>
+                            <h3 class="block-title"><?= $block->escapeHtml(__('Connect account')) ?></h3>
+                            
+                            <p class="block-text">
+                                <?= $block->escapeHtml(__('Connect your Amazon account to your Magento store.')) ?>
+                            </p>
+                            <?php foreach ($block->escapeHtml($block->getActiveConnections()) as $key1 => $value1) { ?>
+                                <div class="store-info">
+                                    <h2 class="block-sub-title"><?= $block->escapeHtml($value1[2]) ?>
+                                        <span class="flag">
+                                            <img src='<?= $block->escapeHtml($block->getViewFileUrl('Zazmic_AmazonMCF::images/'.
+                                            $value1[1].'.png')); ?>'>
+                                        </span>
+                                    </h2>
+
+                                    <?php if (!$block->isConnectedExist($value1[0], 'spapi_oauth_code')):?>
+                                    <p class="connected-label">
+                                        <span class="tick inactive"></span>
+                                        <?= $block->escapeHtml(__('Not connected')) ?>
+                                    </p>                                
+                                    <?php else: ?>
+                                    <a class="link">
+                                        <img 
+                                        class="logo-img" 
+                                        src="<?= $block->escapeHtml($block->getViewFileUrl(($block->hasLogoImageSrc()) ?
+                                        $block->escapeHtml($block->getLogoImageSrc()) : 'images/magento-icon.svg'))?>"/>    
+                                        <span><?= $block->escapeHtml($block->getWebsiteUrl($value1[0]))?></span>
+                                    </a>
+                                    <a class="link">
+                                        <img src='<?= $block->escapeHtml($block->getViewFileUrl('Zazmic_AmazonMCF::images/amazon_a.png')); ?>'>
+                                        <span>https://supplychain.amazon.com/</span>
+                                    </a>
+
+                                    <p class="connected-label">
+                                        <span class="tick active"></span>
+                                        <?= $block->escapeHtml(__('Successfully connected')) ?>
+                                    </p>
+                                    <?php endif;?>
+
+                                    <?php if (!$block->isConnectedExist($value1[0], 'spapi_oauth_code')):?>
+                                    <div class="btn-group">
+                                        <a class="action-primary" 
+                                            onclick="javascript:window.open('<?= $block->escapeHtml($block->getConnectUrl($value1[0]));?>', '_blank', 'toolbar=0,location=0,menubar=0,width=600,height=600');"
+                                            href="">
+                                            <img src='<?= $block->escapeHtml($block->getViewFileUrl('Zazmic_AmazonMCF::images/link-connect.svg')); ?>'>
+                                            <?= $block->escapeHtml(__('Connect')) ?>
+                                        </a>
+                                        <a  class="action-secondary"
+                                            onclick="return confirm('<?= $block->escapeHtml(__('Are you sure to delete the store?')) ?>');"
+                                            href="<?= $block->escapeHtml($block->getDeleteUrl());?>website/<?=$block->escapeHtml($value1[0]);?>">
+                                            <?= $block->escapeHtml(__('Delete')) ?>
+                                        </a>
+                                    </div>
+                                    
+                                    <?php else: ?>
+                                    <a class="action-secondary"
+                                        onclick="return confirm('<?= $block->escapeHtml(__('Are you sure to disconnect the store?')) ?>');"
+                                        href="<?=$block->escapeHtml($block->getDisconnectUrl());?>website/<?=$block->escapeHtml($value1[0]);?>">
+                                        <img src='<?=$block->escapeHtml(
+                                            $block->getViewFileUrl('Zazmic_AmazonMCF::images/link-disconnect.svg')
+                                        ); ?>'>
+                                        <?= $block->escapeHtml(__('Disconnect')) ?>
+                                    </a>
+                                    <?php endif;?>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <?php if (!empty($block->isConnected())):?>
+        <div class="page-actions">
+            <a class="action-primary forward"
+             href="<?= $block->escapeHtml($block->getUrl('amazonmcf/skumapping/index')); ?>" >
+                <?= $block->escapeHtml(__('Proceed to SKU Mapping')) ?>
+            </a>
+        </div>
+        <?php endif;?>
+    <?php endif; ?>
+</div>
+<div id="popup-mpdal" >
+    <div class="content admin__scope-old" style="display: none;" id="addstorePop">
+        <hr class="page-separator" />
+        <form action="<?= $block->escapeUrl($block->getSaveUrl()) ?>" method="post" id="set-amcf-store">
+            <p><?= $block->escapeHtml(__('Connect your Amazon store to your 
+            Magento store to create a single source for your catalog.')) ?></p>
+            <fieldset class="admin__fieldset">
+                <input name="form_key" type="hidden" value="<?= $block->escapeHtml($block->getFormKey()); ?>" />
+                <div class="field-number admin__field _required">
+                    <label class="admin__field-label" for="country">
+                        <span><?= $block->escapeHtml(__('Amazon Store Country')) ?></span>
+                    </label>
+                    <div class="admin__field-control _with-tooltip">
+                        <select required name="country" id="country" class="admin__control-select">
+                            <?php foreach ($block->getAmcfCountries() as $country): ?>
+                                <option value="<?= $block->escapeHtml($country['value']) ?>"> 
+                                <?= $block->escapeHtml($country['label']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <div class="admin__field-tooltip">
+                            <a class="admin__field-tooltip-action action-help" target="_blank" tabindex="1"></a>
+                            <div class="admin__field-tooltip-content">
+                                <?= $block->escapeHtml(__('Amazon Store Country')) ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field-number admin__field _required">
+                    <label class="admin__field-label" for="website">
+                        <span><?= $block->escapeHtml(__('Magento Website')) ?></span>
+                    </label>
+                    <div class="admin__field-control _with-tooltip">
+                        <select required name="website" id="website" class="admin__control-select">
+                            <?php foreach ($block->getWebsites() as $key => $value): ?>
+                                <option value="<?= $block->escapeHtml($key) ?>"> 
+                                <?= $block->escapeHtml($value) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <div class="admin__field-tooltip">
+                            <a class="admin__field-tooltip-action action-help" target="_blank" tabindex="1"></a>
+                            <div class="admin__field-tooltip-content">
+                                <?= $block->escapeHtml(__('Magento Website')) ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field-number admin__field _required">
+                    <label class="admin__field-label" for="amcf_version"></label>
+                    <div class="admin__field-control">
+                        <button title="Submit" class="action-default primary">
+                            <?= $block->escapeHtml(__('Add')) ?>
+                        </button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<script type="text/x-magento-init">
+{
+    "*": {
+        "add-store": {}
+    }
+}
+</script>
+

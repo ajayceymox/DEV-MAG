@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2021 Zazmic. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_order_invoice_save_after">
+        <observer name="after_invoice_create_action" instance="Zazmic\AmazonMCF\Observer\InvoiceCreateAfter" />
+    </event>
+     <event name="sales_order_place_after">
+        <observer name="zazmic_order_place_after" instance="Zazmic\AmazonMCF\Observer\OrderPlaceAfter" />
+    </event>
+</config>

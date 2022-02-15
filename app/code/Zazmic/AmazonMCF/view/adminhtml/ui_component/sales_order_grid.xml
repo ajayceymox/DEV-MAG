@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2021 Zazmic. All rights reserved.
+ */
+-->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <!-- <settings>
+        <buttons>
+            <button name="syncorders">
+                <url path="amazonmcf/ordersync"/>
+                <class>primary</class>
+                <label translate="true">Sync Orders</label>
+            </button>
+        </buttons>
+    </settings> -->
+    <columns name="sales_order_columns">
+        <column name="fulfilled_by_amazon" class="Zazmic\AmazonMCF\Ui\Component\Listing\Column\McfStatus">
+            <settings>
+                <filter>select</filter>
+                <sortable>true</sortable>
+                <options class="Zazmic\AmazonMCF\Ui\Component\Listing\Column\FulFilledStatus\Options"/>
+                <dataType>select</dataType>
+                <label translate="true">Fulfillment Provider</label>
+            </settings>
+        </column>
+    </columns>
+</listing>

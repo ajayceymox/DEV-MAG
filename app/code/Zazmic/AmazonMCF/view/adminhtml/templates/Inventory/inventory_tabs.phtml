@@ -1,0 +1,87 @@
+<?php
+/**
+ * Copyright © 2021 Zazmic. All rights reserved.
+ */
+?>
+<?php $webSites = $block->getWebsites();
+foreach ($webSites as $key => $value) {
+    $selectedStatus = $block->getConfigData('auto_inventory', $key);
+    $checked = '';
+    $activeClass = '';
+    if ($selectedStatus == 1) {
+        $checked= "checked";
+        $activeClass = 'show-select';
+    }
+    ?>
+    <div class="fieldset-wrapper admin__collapsible-block-wrapper "  data-index="inventory_details">
+        <div rel="#tab_contents_<?= /* @noEscape */  $key;?>" 
+        class="fieldset-wrapper-title tab" data-content-id ="tab_contents_<?= /* @noEscape */  $key;?>" >
+            <strong class="admin__collapsible-title">
+                <span data-bind="i18n: label"><?= /* @noEscape */ $block->getConfigCountryName($key);?></span>
+            
+            </strong>
+        </div>
+        <div id="tab_contents_<?= /* @noEscape */  $key;?>" 
+        class="admin__fieldset-wrapper-content admin__collapsible-content  tab_contents">
+            <input type="hidden" name="inventory[<?= /* @noEscape */  $key;?>][scope_id]" 
+            value="<?= /* @noEscape */  $key;?>" data-form-part="inventory_form"
+             id="inventory[<?= /* @noEscape */  $key;?>][scope_id]" />
+            <fieldset class="admin__fieldset methods-outer admin__field-switch">
+            <?= /* @noEscape */
+            $block->getLayout()->createBlock(Zazmic\AmazonMCF\Block\Adminhtml\Inventory\SyncButton::class)
+            ->toHtml() ?>
+                <div class="admin__field sync-status">
+                    <div class="admin__field-label">
+                        <label><span><?= $block->escapeHtml(__('Enable')) ?></span></label>
+                    </div>
+                    <div class="admin__field-control">
+                        <div class="admin__actions-switch" data-role="switcher">
+                            <input <?= /* @noEscape */ $checked ; ?> value="<?= /* @noEscape */ $selectedStatus;?>" 
+                            type="checkbox" class="admin__actions-switch-checkbox sync_status" 
+                            name="inventory[<?= /* @noEscape */  $key;?>][auto_inventory]" 
+                            id="inventory[<?= /* @noEscape */  $key;?>][auto_inventory]"
+                             data-form-part="inventory_form" data-index="<?= /* @noEscape */  $key;?>">
+                            <label class="admin__actions-switch-label" 
+                            for="inventory[<?= /* @noEscape */  $key;?>][auto_inventory]">
+                                <span class="admin__actions-switch-text" 
+                                    data-text-on="Yes" data-text-off="No">
+                                </span>
+                            </label>
+                        </div>
+                    </div>    
+                </div>
+                <div class="admin__field interval-select <?= /* @noEscape */  $activeClass;?>" 
+                data-index="shipment_sync_interval" id ="interval-select-<?= /* @noEscape */  $key;?>">
+                    <div class="admin__field-label">
+                        <label><span><?= $block->escapeHtml(__('Inventory Sync')) ?></span></label>
+                    </div>
+                    <div class="admin__field-control">
+                <?php $selectedValue = $block->getConfigData('inventory_sync_interval', $key);
+                $selectOptions = $block->getOptions();?>
+                        <select data-form-part="inventory_form" class="admin__control-select"  
+                        name="inventory[<?= /* @noEscape */  $key;?>][sync_interval]" >
+                            <?php foreach ($selectOptions as $key => $value) {
+                                $selected = '';
+                                if ($selectedValue == $key) {
+                                    $selected= "selected";
+                                }
+                                ?>
+                            <option data-title="<?= /* @noEscape */ $value ?>" 
+                            value="<?= /* @noEscape */ $key ?>" <?= /* @noEscape */ $selected ?>>
+                                <?= /* @noEscape */ $value ?>
+                            </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+<?php }
+?>
+<script>
+    require(['jquery', 'settings'], function($, settings) {
+        settings();
+    });
+</script>

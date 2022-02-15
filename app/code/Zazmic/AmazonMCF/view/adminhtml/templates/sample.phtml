@@ -1,0 +1,40 @@
+<?php
+/**
+ * Copyright © 2021 Zazmic. All rights reserved.
+ */
+?>
+<div class="admin__fieldset">
+    <div class="admin__field">
+        <label class="admin__field-label" for="">
+            <img src='<?= $block->escapeHtml($block->getViewFileUrl('Zazmic_AmazonMCF::images/sku-import-banner.jpg')); ?>'>
+        </label>
+        <div class="admin__field-control">
+            <div class="admin__field-note custom-note" data-bind="attr: {id: noticeId}" id="notice-G7AHTD9">
+                <span data-bind="html: notice">
+                    <div class="steps">
+                        <strong><?= $block->escapeHtml(__('Follow the 3 steps below to map SKUs:')) ?></strong> 
+                        <span><br>
+                            <ul>
+                                <li>
+                                    <strong>1.</strong>
+                                    <?= $block->escapeHtml(__('Download sample .csv ')) ?>
+                                    <a href='<?= $block->escapeHtml($block->getViewFileUrl('Zazmic_AmazonMCF::images/skumap-import-sample.csv')) ?>'><b><?= $block->escapeHtml(__('here')) ?></b></a>
+                                </li>
+                                <li>
+                                    <strong>2.</strong>
+                                    <?= $block->escapeHtml(__('Populate sample .csv file with your Magento product SKUs ')) ?>
+                                    <?= $block->escapeHtml(__('NOTE: Item-name, seller-sku are mandatory fields')) ?>
+                                </li>
+                                <li>
+                                    <strong>3.</strong>
+                                    <?= $block->escapeHtml(__('Click UPLOAD button below to import ')) ?>
+                                    <?= $block->escapeHtml(__('* Only .csv file types are supported')) ?>
+                                </li>
+                            </ul>
+                        </span>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,226 @@
+<?php
+/**
+ * Copyright © 2021 Zazmic. All rights reserved.
+ */
+?>
+
+
+<div class="box-s1">
+    <div class="row b4">
+        <div class="col-6 col-left">
+            <img src='<?= $block->escapeHtml(
+                $block->getViewFileUrl('Zazmic_AmazonMCF::images/shipping-rate-banner.jpg')
+            ); ?>'>
+        </div>
+        <div class="col-6 col-right">
+            <div class="box-head">
+                <span class="box-label"><?= $block->escapeHtml(__('STEP 3')) ?></span>
+                <h3 class="box-title"><?= $block->escapeHtml(__('Shipping Rate')) ?></h3>
+                <p class="box-text"><?= $block->escapeHtml(__('Enabling Shipping Rate Override will 
+                override the shipping rates for the listed Amazon ship speeds based on your settings below.')) ?></p>
+            </div>
+            
+            <?php $webSites = $block->getWebsites();
+            foreach ($webSites as $key => $value) {
+                $key = $value[0];
+                if (!empty($block->getConfigData('spapi_oauth_code', $key))): ?>
+                <div class="fieldset-wrapper admin__collapsible-block-wrapper section-config" 
+                data-index="shipmentstatus_details">
+                    <div rel="#tab_contents_<?= $block->escapeHtml($key);?>" class="fieldset-wrapper-title tab" 
+                    data-content-id="tab_contents_<?= $block->escapeHtml($key);?>">
+                        <strong class="admin__collapsible-title">
+                            <span data-bind="i18n: label">
+                                <?= $block->escapeHtml($value[2]);?>
+                            </span>
+                        </strong>
+                    </div>
+                    <div id="tab_contents_<?= $block->escapeHtml($key);?>" 
+                    class="admin__fieldset-wrapper-content admin__collapsible-content tab_contents">          
+                        <input type="hidden" name="shipment_rates[<?= $block->escapeHtml($key);?>][scope_id]"
+                            value="<?= $block->escapeHtml($key);?>"
+                            data-form-part="shippingrate_form" 
+                            id="shipment_rates[<?=$block->escapeHtml($key);?>][scope_id]" 
+                        />
+                        <input type="hidden" name="currency[<?= $block->escapeHtml($key);?>]" 
+                        value="<?= $block->escapeHtml($block->getCurrencySymbol($key)); ?>" />
+                
+                    <?php $shippingRates = $block->getRateOptions();
+                    $i = $key ;
+
+                    foreach ($shippingRates as $shippingRate) {
+                        $selectedStatus = $block->getConfigData($shippingRate[1].'_enable', $i);
+                        $selectedRate = $block->getConfigData($shippingRate[1].'_rate', $i);
+                        $selectedOrder = $block->getConfigData($shippingRate[1].'_order', $i);
+                        $selectedDesc = $block->getConfigData($shippingRate[1].'_desc', $i);
+                        $checked = '';
+                        $activeClass = '';
+                        $required = '';
+                        if ($selectedStatus == 1) {
+                            $checked = "checked";
+                            $activeClass = 'show-select';
+                            $required = 'required-entry';
+                        }
+                        ?>
+                        <div class="section-config">
+                            <div rel="#tab_contents_<?= $block->escapeHtml($shippingRate[1].'_'.$i);?>"
+                             class="fieldset-wrapper-title tab_sub section-config" 
+                                data-content-id ="tab_contents_<?= $block->escapeHtml($shippingRate[1].'_'.$i);?>" >
+                                <strong class="admin__collapsible-title">
+                                    <span data-bind="i18n: label">
+                                        <?= $block->escapeHtml($shippingRate[0]); ?>
+                                    </span>            
+                                </strong>
+                            </div>
+                            <div id="tab_contents_<?= $block->escapeHtml($shippingRate[1].'_'.$i);?>" 
+                                class="admin__fieldset-wrapper-content admin__collapsible-content tab_contents">   
+                                <fieldset class="admin__fieldset methods-outer admin__field-switch">
+                                    <div class="admin__field custom-field-switch sync-status" >
+                                        <div class="admin__field-control" >
+                                            <div class="admin__actions-switch" data-role="switcher">
+                                                <input data-form-part="shippingrate_form"
+                                                 <?= $block->escapeHtml($checked); ?> 
+                                                    value="<?= $block->escapeHtml($selectedStatus);?>" 
+                                                    type="checkbox" 
+                                                    class="admin__actions-switch-checkbox sync_status" 
+                                                    name="shipment_rates[<?= $block->escapeHtml($key);?>][<?= $block->escapeHtml($shippingRate[1])?>_enable]" 
+                                                    id="shipment_rates[<?= $block->escapeHtml($key);?>][<?= $block->escapeHtml($shippingRate[1])?>][<?= $block->escapeHtml($shippingRate[1])?>_enable]" 
+                                                    data-form-part="shippingrate_form" 
+                                                    data-index="<?= $block->escapeHtml($shippingRate[1].$key);?>">
+                                                <label class="admin__actions-switch-label" 
+                                                    for="shipment_rates[<?= $block->escapeHtml($key);?>][<?= $block->escapeHtml($shippingRate[1])?>][<?= $block->escapeHtml($shippingRate[1])?>_enable]">
+                                                    <span class="admin__actions-switch-text"
+                                                     data-text-on="Yes" data-text-off="No"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="admin__field-label _with-tooltip admin__custom-tooltip">
+                                            <label><span><?= $block->escapeHtml(__('Shipping rate override')) ?></span></label>
+                                            <div class="admin__field-tooltip">
+                                                <a class="admin__field-tooltip-action action-help"
+                                                 target="_blank" tabindex="1"></a>
+                                                <div class="admin__field-tooltip-content">
+                                                    <?= $block->escapeHtml(
+                                                        __("Enabling Shipping Rate Override will override the 
+                                                        shipping rates for the listed Amazon ship speeds 
+                                                        based on your settings below.")
+                                                    ) ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div 
+                                        class="admin__field <?= $block->escapeHtml($activeClass);?> 
+                                        interval-select-<?= $block->escapeHtml($shippingRate[1].$key);?>" >
+                                        <div class="admin__field-label">
+                                            <label>
+                                                <span>
+                                                    <?= $block->escapeHtml(__('Shipping rate')) ?>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="admin__field-control _with-tooltip admin__custom-addon 
+                                        admin__custom-tooltip">
+                                            <input 
+                                            data-form-part="shippingrate_form" 
+                                            class="rate-text admin__control-text 
+                                                validate-number 
+                                                <?= $block->escapeHtml($required); ?>" 
+                                            type="text" 
+                                            name="shipment_rates[<?= $block->escapeHtml($key);?>][<?= $block->escapeHtml($shippingRate[1])?>_rate]"
+                                            value= "<?= $block->escapeHtml($selectedRate); ?>" 
+                                            data-index="<?= $block->escapeHtml($key);?>"  
+                                            data-index-type="<?= $block->escapeHtml($shippingRate[1]);?>">
+                                            <div class="admin__control-addon">
+                                                <label class="admin__addon-prefix">
+                                                    <span>
+                                                        <?= $block->escapeHtml($block->getCurrencySymbol($key)); ?>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="admin__field-tooltip">
+                                                <a class="admin__field-tooltip-action action-help" 
+                                                target="_blank" tabindex="1"></a>
+                                                <div class="admin__field-tooltip-content">
+                                                    <?=$block->escapeHtml(
+                                                        __("Adjusting shipping rates will only override Amazon 
+                                                        shipping fees for your customer's orders and will 
+                                                        not change your fulfillment fees.")
+                                                    ) ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div 
+                                        class="admin__field 
+                                            <?= $block->escapeHtml($activeClass);?> 
+                                            interval-select-<?= $block->escapeHtml($shippingRate[1].$key);?>" >
+                                        <div class="admin__field-label">
+                                            <label>
+                                                <span>
+                                                    <?= $block->escapeHtml(__('On orders over')) ?>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="admin__field-control _with-tooltip admin__custom-addon 
+                                        admin__custom-tooltip">
+                                            <input 
+                                            value= "<?= $block->escapeHtml($selectedOrder); ?>" 
+                                            data-form-part="shippingrate_form" 
+                                            class="rate-text admin__control-text 
+                                                validate-number 
+                                                <?= $block->escapeHtml($required); ?>" 
+                                            type="text" 
+                                            name="shipment_rates[<?= $block->escapeHtml($key);?>][<?= $block->escapeHtml($shippingRate[1])?>_order]" 
+                                            data-index="<?= $block->escapeHtml($key);?>"
+                                            data-index-type="<?= $block->escapeHtml($shippingRate[1]);?>">
+                                            <div class="admin__control-addon">
+                                                <label class="admin__addon-prefix">
+                                                    <span>
+                                                        <?= $block->escapeHtml($block->getCurrencySymbol($key)); ?>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="admin__field-tooltip">
+                                                <a class="admin__field-tooltip-action action-help" 
+                                                target="_blank" tabindex="1"></a>
+                                                <div class="admin__field-tooltip-content">
+                                                    <?=$block->escapeHtml(
+                                                        __('Shipping rate applies to the order amount above this.')
+                                                    ) ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div 
+                                        class="admin__field 
+                                        <?=$block->escapeHtml($activeClass);?>
+                                        interval-select-<?=$block->escapeHtml($shippingRate[1].$key);?>" >
+                                        <div class="admin__field-label">
+                                            <label><span><?= $block->escapeHtml(__('Description')) ?></span></label>
+                                        </div>
+                                        <div class="admin__field-control"> 
+                                            <textarea disabled="disabled" 
+                                            data-form-part="shippingrate_form"
+                                            class="admin__control-text"
+                                            name="shipment_rates[<?= $block->escapeHtml($key);?>][<?= $block->escapeHtml($shippingRate[1])?>_desc]"
+                                            style="max-width: calc(100% - 45px - 4px)
+                                            "><?=$block->escapeHtml($selectedDesc);?></textarea>   
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <?php } ?>
+                    </div>
+                </div>
+                <?php endif;
+            } ?>
+        </div>
+    </div>
+</div>
+<script>
+    require(['jquery', 'settings'], function($, settings) {
+        settings();
+    });
+</script>
+

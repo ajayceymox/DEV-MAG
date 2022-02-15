@@ -1,0 +1,90 @@
+type Query {
+    getCountNumberDays(input: DateInput): DateOutput 
+      @resolver(class: "Ajay\\TestGQ\\Model\\Resolver\\GetCountNumberD
+      ays") 
+      @cache(cacheIdentity: "Ajay\\TestGQ\\Model\\Resolver\\Navigation\\Identity")
+      @doc(description: "Find the number of days that a month has in the specified year")
+}
+input DateInput {
+    year: Int
+    month: Int
+}
+
+type DateOutput {
+    days: Int
+}
+
+type Query
+{
+    CustomGraphql (
+        username: String @doc(description: "Email Address/Mobile Number")
+        password: String @doc(description: "Password")
+        fieldtype: String @doc(description: "Field Type")
+        websiteId: Int = 1 @doc (description: "Website Id")
+    ): CustomGraphqlOutput @resolver(class: "Ajay\\TestGQ\\Model\\Resolver\\CustomGraphql") @doc(description:"Custom Module Datapassing")
+}
+type CustomGraphqlOutput
+{
+    username: String
+    password: String
+    fieldtype: String
+
+}
+
+type Mutation {
+  createPickUpStores(input: PickUpStoreInput!): PickUpStoreOutput
+    @resolver(
+      class: "\\Ajay\\TestGQ\\Model\\Resolver\\CreatPickUpStore"
+    )
+    @doc(description: "Create a new pickup store")
+}
+
+type PickUpStoreOutput {
+  pick_up_store: PickUpStore!
+}
+
+input PickUpStoreInput {
+  name: String @doc(description: "")
+  street: String @doc(description: "")
+  street_num: Int @doc(description: "")
+  city: String @doc(description: "")
+  postcode: String @doc(description: "")
+  latitude: Float @doc(description: "")
+  longitude: Float @doc(description: "")
+}
+type Query {
+  pickUpStores(
+    filter: PickUpStoresFilterInput @doc(description: "")
+    pageSize: Int = 5
+      @doc(description: "How many items should show on the page")
+    currentPage: Int = 1
+      @doc(description: "Allows to ussing paging it start with 1")
+  ): pickUpStoresOutput
+    @resolver(
+      class: "\\LarsRoettig\\GraphQLStorePickup\\Model\\Resolver\\PickUpStores"
+    )
+    @doc(description: "The Impelemention to resolve PickUp stores")
+}
+
+input PickUpStoresFilterInput {
+  name: FilterTypeInput @doc(description: "")
+  postcode: FilterTypeInput @doc(description: "")
+  latitude: FilterTypeInput @doc(description: "")
+  longitude: FilterTypeInput @doc(description: "")
+  or: PickUpStoresFilterInput
+}
+
+type pickUpStoresOutput {
+  total_count: Int @doc(description: "")
+  items: [PickUpStore] @doc(description: "")
+}
+
+type PickUpStore {
+  name: String @doc(description: "")
+  street: String @doc(description: "")
+  street_num: Int @doc(description: "")
+  city: String @doc(description: "")
+  postcode: String @doc(description: "")
+  latitude: Float @doc(description: "")
+  longitude: Float @doc(description: "")
+}

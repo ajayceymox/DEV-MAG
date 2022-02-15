@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2021 Zazmic. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- log collection-->
+    <preference for="Zazmic\AmazonMCF\Api\Data\McfLogSearchResultInterface" type="Magento\Framework\Api\SearchResults"/>
+    <preference for="Zazmic\AmazonMCF\Api\Data\McfLogInterface" type="Zazmic\AmazonMCF\Model\Data\McfLog"/>
+    <preference for="Zazmic\AmazonMCF\Api\McfLogRepositoryInterface" type="Zazmic\AmazonMCF\Model\McfLogRepository"/>
+
+    <type name="Zazmic\AmazonMCF\Model\ResourceModel\McfLog\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">mcf_log</argument>
+            <argument name="eventPrefix" xsi:type="string"></argument>
+            <argument name="eventObject" xsi:type="string"></argument>
+            <argument name="resourceModel" xsi:type="string">Zazmic\AmazonMCF\Model\ResourceModel\McfLog</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <!--data provider name which used in grid ui component file -->
+                <item name="mcf_log_listing_data_source" xsi:type="string">Zazmic\AmazonMCF\Model\ResourceModel\McfLog\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!-- sku map collection-->
+    <preference for="Zazmic\AmazonMCF\Api\Data\SkuMappingSearchResultInterface" type="Magento\Framework\Api\SearchResults"/>
+    <preference for="Zazmic\AmazonMCF\Api\Data\SkuMappingInterface" type="Zazmic\AmazonMCF\Model\Data\SkuMapping"/>
+    <preference for="Zazmic\AmazonMCF\Api\SkuMappingRepositoryInterface" type="Zazmic\AmazonMCF\Model\SkuMappingRepository"/>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="amcf_sku_map_grid_listing_data_source" xsi:type="string">Zazmic\AmazonMCF\Model\ResourceModel\SkuMapping\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Zazmic\AmazonMCF\Model\ResourceModel\SkuMapping\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">catalog_product_entity</argument>
+            <argument name="eventPrefix" xsi:type="string">skumapping_collection</argument>
+            <argument name="eventObject" xsi:type="string">skumapping_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Zazmic\AmazonMCF\Model\ResourceModel\SkuMapping</argument>
+        </arguments>
+    </type>
+    <!-- More Sku Grid Collection-->
+  <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="amcf_more_sku_grid_listing_data_source" xsi:type="string">Zazmic\AmazonMCF\Model\ResourceModel\MoreSkuMapping\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+     <type name="Zazmic\AmazonMCF\Model\ResourceModel\MoreSkuMapping\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">catalog_product_entity</argument>
+            <argument name="eventPrefix" xsi:type="string">more_skumapping_collection</argument>
+            <argument name="eventObject" xsi:type="string">more_skumapping_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Zazmic\AmazonMCF\Model\ResourceModel\SkuMapping</argument>
+        </arguments>
+    </type>
+    <!-- inventory sync info-->
+    <preference for="Zazmic\AmazonMCF\Api\Data\InventorySyncinfoSearchResultInterface" type="Magento\Framework\Api\SearchResults"/>
+    <preference for="Zazmic\AmazonMCF\Api\Data\InventorySyncinfoInterface" type="Zazmic\AmazonMCF\Model\Data\InventorySyncinfo"/>
+    <preference for="Zazmic\AmazonMCF\Api\InventorySyncinfoRepositoryInterface" type="Zazmic\AmazonMCF\Model\InventorySyncinfoRepository"/>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="mcf_inventory_syncinfo_grid_listing_data_source" xsi:type="string">Zazmic\AmazonMCF\Model\ResourceModel\InventorySyncinfo\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Zazmic\AmazonMCF\Model\ResourceModel\InventorySyncinfo\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">mcf_inventory_sync_info</argument>
+            <argument name="eventPrefix" xsi:type="string">inventorysyncinfo_collection</argument>
+            <argument name="eventObject" xsi:type="string">inventorysyncinfo_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Zazmic\AmazonMCF\Model\ResourceModel\InventorySyncinfo</argument>
+        </arguments>
+    </type>
+
+    <!-- sync info-->
+    <preference for="Zazmic\AmazonMCF\Api\SyncinfoRepositoryInterface" type="Zazmic\AmazonMCF\Model\SyncinfoRepository" />
+    <preference for="Zazmic\AmazonMCF\Api\Data\SyncinfoInterface" type="Zazmic\AmazonMCF\Model\Data\Syncinfo" />
+    <preference for="Zazmic\AmazonMCF\Api\Data\SyncinfoSearchResultInterface" type="Magento\Framework\Api\SearchResults" />
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="mcf_inventory_syncinfo_grid_listing_data_source" xsi:type="string">Zazmic\AmazonMCF\Model\ResourceModel\Syncinfo\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Zazmic\AmazonMCF\Model\ResourceModel\Syncinfo\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">mcf_sync_info</argument>
+            <argument name="eventPrefix" xsi:type="string">syncinfo_collection</argument>
+            <argument name="eventObject" xsi:type="string">syncinfo_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Zazmic\AmazonMCF\Model\ResourceModel\Syncinfo</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Shipping\Model\Shipping">
+        <plugin disabled="false" name="shipping_method_management" sortOrder="10"
+            type="Zazmic\AmazonMCF\Plugin\ApplyShipping"/>
+    </type>
+     <preference for="Magento\Shipping\Block\Tracking\Popup" type="Zazmic\AmazonMCF\Block\Tracking\Popup" />
+</config>

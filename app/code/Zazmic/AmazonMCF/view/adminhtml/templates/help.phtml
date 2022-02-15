@@ -1,0 +1,136 @@
+<?php
+/**
+ * Copyright © 2021 Zazmic. All rights reserved.
+ */
+/* @var $block \Magento\Backend\Block\Template */
+?>
+<div class="row amcf-helper">
+    <div id="accordion" class="accordion" data-mage-init='{
+        "accordion":{
+            "active": [0],
+            "collapsible": true,
+            "openedState": "active",
+            "multipleCollapsible": true
+        }}'>
+        <div data-role="collapsible" class="collapsible title">
+            <div data-role="trigger">
+                <h4><?= $block->escapeHtml(__('How do I sign up for Multi-Channel Fulfillment?')) ?></h4>
+            </div>
+        </div>
+        <div data-role="content" class="content">
+            <?= $block->escapeHtml(__('If you’re new to selling on Amazon')) ?>
+            <a href="https://supplychain.amazon.com/contact-us?ref_=mcfus_sup_cu_i" target="_blank">
+                <?= $block->escapeHtml(__('contact'))?></a> 
+            <?= $block->escapeHtml(__('us to sign up. If you currently sell with FBA, get started'))?>
+            <a href="https://sellercentral.amazon.com/mcf?ref_=mcfus_sup_sc_i" target="_blnk">
+                 <?= $block->escapeHtml(__('here.'))?></a>
+            </div>
+
+        <div data-role="collapsible" class="collapsible title">
+            <div data-role="trigger">
+                <h4>
+                    <?= $block->escapeHtml(__('Do I need to be an Amazon seller to use Multi-Channel Fulfillment?')) ?>
+                </h4>
+            </div>
+        </div>
+        <div data-role="content" class="content">
+            <?= $block->escapeHtml(__('No. An Amazon Seller Central account is required to use MCF, 
+            but you are not required to sell items on Amazon. To prevent your products from being purchased on Amazon,
+             you can set the "start selling" date far into the future when you create the product listing. 
+             This will hide the product from the Amazon marketplace, but MCF will still accept fulfillment orders 
+             from your other channels.')) ?>
+        </div>
+
+        <div data-role="collapsible" class="collapsible title">
+            <div data-role="trigger">
+                <h4><?= $block->escapeHtml(__('What is the difference between FBA and MCF?')) ?></h4>
+            </div>
+        </div>
+        <div data-role="content" class="content">
+            <a href="https://sell.amazon.com/fulfillment-by-amazon?ref_=sdus_soa_fba2_n"
+             target="_blnk"><?= $block->escapeHtml(__('Fulfillment by Amazon (FBA)'))?></a> 
+             <?= $block->escapeHtml(__('allows you to fulfill orders placed on Amazon while Multi-Channel 
+             Fulfillment (MCF) fulfills orders on any of your channels including your own website.'))?>
+        </div>
+        
+        <div data-role="collapsible" class="collapsible title">
+            <div data-role="trigger">
+                <h4>
+                    <?= $block->escapeHtml(__('Can I use my current FBA inventory to 
+                    fulfill Multi-Channel Fulfillment orders?')) ?>
+                </h4>
+            </div>
+        </div>
+        <div data-role="content" class="content">
+            <?= $block->escapeHtml(__('Yes. If you are an existing Amazon seller using FBA,
+             your inventory will serve both Amazon customers and customers from your MCF sales channels.')) ?>
+        </div>
+        
+        <div data-role="collapsible" class="collapsible title">
+            <div data-role="trigger">
+                <h4>
+                    <?= $block->escapeHtml(__('How does MCF impact my Inventory Performance Index (IPI) score?')) ?>
+                </h4>
+            </div>
+        </div>
+        <div data-role="content" class="content">
+            <?= $block->escapeHtml(__('The IPI score measures how efficient and productive you are in managing 
+            your FBA inventory.Multiple factors could influence your IPI score. However, an important one is 
+            your actions to maintain a balanced inventory level between sold and on-hand inventory and avoid excess
+               inventory (overstock). Using MCF to improve sell-through can help avoid excess inventory,
+                increasing your ability to achieve a strong IPI score.')) ?>
+        </div>
+        
+        <div data-role="collapsible" class="collapsible title">
+            <div data-role="trigger">
+                <h4><?= $block->escapeHtml(__('Is MCF offered in other countries?')) ?></h4>
+            </div>
+        </div>
+        <div data-role="content" class="content">
+            <?= $block->escapeHtml(__('Yes. MCF is available in Australia, Canada, France,
+             Germany, Italy, Japan, Mexico, Spain and the United Kingdom.')) ?>
+        </div>
+        
+        <div data-role="collapsible" class="collapsible title">
+            <div data-role="trigger">
+                <h4><?= $block->escapeHtml(__('Will Amazon share my data with other companies?')) ?></h4>
+            </div>
+        </div>
+        <div data-role="content" class="content">
+            <?= $block->escapeHtml(__('No. Amazon collects data needed to provide distribution and
+             fulfillment services and strictly prohibits use of non-public, 
+             seller-specific data beyond enabling us to perform the services.')) ?>
+        </div>
+        
+        <div data-role="collapsible" class="collapsible title">
+            <div data-role="trigger">
+                <h4><?= $block->escapeHtml(__('Does MCF participate in any sustainability initiatives?')) ?></h4>
+            </div>
+        </div>
+        <div data-role="content" class="content">
+            <?= $block->escapeHtml(__('MCF, as a part of Amazon, is committed to building a
+             sustainable business for customers and the planet. In 2019, Amazon co-founded 
+             The Climate Pledge, a commitment to be net-zero carbon by 2040. To reach this goal,
+              Amazon has undertaken initiatives targeting packaging, renewable energy, and transportation.')) ?>
+               <a href="https://sustainability.aboutamazon.com/about/the-climate-pledge"
+                target="_blnk"><?= $block->escapeHtml(__('Learn more about these and other initiatives.')) ?></a>
+        </div>
+        
+        <div data-role="collapsible" class="collapsible title">
+            <div data-role="trigger">
+                <h4>
+                    <?= $block->escapeHtml(__('Can I tell my customers that their orders are fulfilled by 
+                Amazon Multi-Channel Fulfillment and is there a badge I can add to my website?')) ?>
+                </h4>
+            </div>
+        </div>
+        <div data-role="content" class="content">
+            <?= $block->escapeHtml(__('Yes, you can use the statement "Fulfilled by Amazon" 
+            on your website.You can also showcase')) ?>
+             <a href="https://m.media-amazon.com/images/G/01/mcf-new-collection/support/Amazon_MCF_logo.png"
+              target="_blnk"><?= $block->escapeHtml(__('our logo'))?></a> 
+              <?= $block->escapeHtml(__(' on your website to improve your customers checkout
+               experience and decrease shopping cart abandonment.'))?>')?>
+            </div>
+    </div>
+</div>
